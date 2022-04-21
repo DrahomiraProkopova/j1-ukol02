@@ -11,27 +11,18 @@ public class HlavniProgram {
         zofka = new Turtle();
         zofka.setPenWidth(2);
 
+
     }
 
     private void nakresliKolecko(Turtle zofka, Color barvaCary, double polomer) {
         zofka.setPenColor(barvaCary);
-        double polomerA = Math.pow(polomer, 2);        //Pythagorova veta
-        double delkaStrany = (polomerA + polomerA);  //Pythagorova veta
+        double obvod = (2 * (Math.PI) * polomer);
         for (int i = 0; i < 45; i++) {    //i < 360/uhel
-            zofka.move(delkaStrany);
+            zofka.move(obvod / 45);
             zofka.turnRight(8);   //kolecko bude 45uhelnik
         }
 
-
     }
-     /*
-    private void nakresliKolecko(Turtle zofka, Color barvaCary, double delkaStrany) {
-        zofka.setPenColor(barvaCary);
-        for (int i = 0; i < 360; i++) {
-            zofka.move(delkaStrany);
-            zofka.turnRight(1);
-        }     */                    //druha varianta nakresleni kolecka
-
 
     private void nakresliObdelnik(Turtle zofka, Color barvaCary, double delkaStranyA, double delkaStranyB) {
         for (int i = 0; i < 2; i++) {
@@ -44,6 +35,7 @@ public class HlavniProgram {
     }
 
     private void nakresliRovnostrannyTrojuhelnik(Turtle zofka, Color barvaCary, double delkaStrany) {
+        zofka.turnRight(30);
         for (int i = 0; i < 3; i++) {
             zofka.setPenColor(barvaCary);
             zofka.move(delkaStrany);
